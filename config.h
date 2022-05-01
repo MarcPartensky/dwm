@@ -71,10 +71,10 @@ static const char *spotifynext = { "dbus-send", "--print-reply", "--dest=org.mpr
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,                            XK_F1,     spawn,          {.v = mutevol } },
-    { 0,                            XK_F2,     spawn,          {.v = downvol } },
-	{ 0,                            XK_F3,     spawn,          {.v = upvol   } },
-	{ 0,                            XK_Alt_D,  spawn,          {.v = spotifynext } },
+	{ 0,                            XF86XK_AudioMute,     spawn,          {.v = mutevol } },
+    { 0,                            XF86XK_AudioLowerVolume,     spawn,          {.v = downvol } },
+	{ 0,                            XF86XK_AudioRaiseVolume,     spawn,          {.v = upvol   } },
+	// { 0,                            XK_Alt_D,  spawn,          {.v = spotifynext } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
