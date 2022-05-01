@@ -68,7 +68,7 @@ static const char *nautiluscmd[]  = { "nautilus", NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *spotifynext = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next" , NULL };
+static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = nautiluscmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = spotifycmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = spotifynext } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
