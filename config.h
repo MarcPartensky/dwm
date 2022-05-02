@@ -56,7 +56,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/zsh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -64,10 +64,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *nautiluscmd[]  = { "nautilus", NULL };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *screenshot[] = { "/usr/bin/scrot", "-s", NULL };
+static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *screenshot[] = { "screenshot", "-s", NULL };
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 
 static Key keys[] = {
