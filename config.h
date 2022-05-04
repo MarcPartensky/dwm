@@ -81,7 +81,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = nautiluscmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = spotifynext } },
+	{ Mod1Mask,                     XK_d,      spawn,          {.v = spotifynext } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
