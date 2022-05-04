@@ -69,19 +69,22 @@ static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NUL
 static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const char *screenshot[] = { "screenshot", "-s", NULL };
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
+static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
+static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,                            XF86XK_AudioMute,     spawn,          {.v = mutevol } },
     { 0,                            XF86XK_AudioLowerVolume,     spawn,          {.v = downvol } },
 	{ 0,                            XF86XK_AudioRaiseVolume,     spawn,          {.v = upvol   } },
-	// { 0,                            XK_Alt_D,  spawn,          {.v = spotifynext } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = nautiluscmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = spotifynext } },
+	{ Mod1Mask,                     XK_s,      spawn,          {.v = spotifyprevious } },
+	{ Mod1Mask,                     XK_k,      spawn,          {.v = spotifytoggle } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
