@@ -72,8 +72,8 @@ static const char *screenshot[] = { "scrot", "~/Pictures/%Y-%m-%d_%H:%M:%S.png",
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
-static const char *downbright[] = { "brightness-ctl", "s", "5%-", NULL };
-static const char *upbright[] = { "brightness-ctl", "s", "5%+", NULL };
+static const char *downbright[] = { "brightnessctl", "s", "5%-", NULL };
+static const char *upbright[] = { "brightnessctl", "s", "5%+", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
