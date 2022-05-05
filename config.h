@@ -71,12 +71,16 @@ static const char *screenshot[] = { "screenshot", "-s", NULL };
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
+static const char *downbright[] = { "brightness-ctl", "s", "-5%", NULL };
+static const char *upbright[] = { "brightness-ctl", "s", "+5%", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,                            XF86XK_AudioMute,     spawn,          {.v = mutevol } },
-    { 0,                            XF86XK_AudioLowerVolume,     spawn,          {.v = downvol } },
-	{ 0,                            XF86XK_AudioRaiseVolume,     spawn,          {.v = upvol   } },
+	{ 0,                            XF86XK_AudioMute,          spawn,          {.v = mutevol } },
+	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol } },
+    { 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn,          {.v = upbright } },
+	{ 0,                            XF86XK_MonBrightnessDown,  spawn,          {.v = downbright } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
