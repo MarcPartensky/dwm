@@ -57,6 +57,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/zsh", "-c", cmd, NULL } }
+#define PrintScreen 0x0000ff61
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -81,11 +82,11 @@ static Key keys[] = {
     { 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
 	{ 0,                            XF86XK_MonBrightnessUp,    spawn,          {.v = upbright } },
 	{ 0,                            XF86XK_MonBrightnessDown,  spawn,          {.v = downbright } },
+	{ 0,                            PrintScreen,               spawn,          {.v = screenshot } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = nautiluscmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = spotifynext } },
 	{ Mod1Mask,                     XK_s,      spawn,          {.v = spotifyprevious } },
 	{ Mod1Mask,                     XK_k,      spawn,          {.v = spotifytoggle } },
