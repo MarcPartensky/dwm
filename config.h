@@ -74,6 +74,9 @@ static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=o
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
 static const char *downbright[] = { "brightnessctl", "s", "5%-", NULL };
 static const char *upbright[] = { "brightnessctl", "s", "5%+", NULL };
+static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
+static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
+static const char *altbarcmd        = ".local/bin/bar"; /* Alternate bar launch command */
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
