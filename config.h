@@ -72,7 +72,7 @@ static const char *downbright[] = { "brightnessctl", "s", "5%-", NULL };
 static const char *upbright[] = { "brightnessctl", "s", "5%+", NULL };
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
-static const char *altbarcmd        = "$HOME/.local/bin/bar"; /* Alternate bar launch command */
+static const char *altbarcmd        = ".local/bin/bar"; /* Alternate bar launch command */
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
