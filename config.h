@@ -58,7 +58,21 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *slockcmd[]  = { "slock", NULL };
+static const char *nautiluscmd[]  = { "nautilus", NULL };
+static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *screenshot[] = { "scrot", "~/Pictures/%Y-%m-%d_%H:%M:%S.png", "-s", "-e", "'xclip -selection clipboard -target image/png -i $f'", NULL };
+static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
+static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
+static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
+static const char *downbright[] = { "brightnessctl", "s", "5%-", NULL };
+static const char *upbright[] = { "brightnessctl", "s", "5%+", NULL };
+static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
+static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
+static const char *altbarcmd        = ".local/bin/bar"; /* Alternate bar launch command */
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
