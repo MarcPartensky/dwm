@@ -61,7 +61,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenu, manipulated in spawn() */
-static const char *dmenu[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *term[]  = { "alacritty", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *nautilus[]  = { "nautilus", NULL };
@@ -83,7 +83,7 @@ static Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessUp,    spawn,          {.v = upbright } },
 	{ 0,                            XF86XK_MonBrightnessDown,  spawn,          {.v = downbright } },
 	{ 0,                            PrintScreen,               spawn,          {.v = screenshot } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenu} },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd} },
 	{ MODKEY,                       XK_Return, spawn,          {.v = term} },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slock} },
 	{ Mod1Mask,                     XK_l,      spawn,          {.v = nautilus} },
@@ -130,7 +130,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = term} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
