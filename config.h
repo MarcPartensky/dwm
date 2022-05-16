@@ -74,7 +74,7 @@ static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NUL
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
-static const char *screenshot[] = { "scrot", "Pictures/%Y-%m-%d_%H:%M:%S.png", "-s", "-e", "'xclip -selection clipboard -target image/png -i $f'", NULL };
+static const char *screenshot[] = { ".local/bin/screenshot", NULL };
 static const char *test[] = { "notify-send", "test", NULL };
 
 
