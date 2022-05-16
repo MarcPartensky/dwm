@@ -65,15 +65,17 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *term[]  = { "alacritty", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *nautilus[]  = { "nautilus", NULL };
+static const char *downbright[] = { "brightnessctl", "s", "2%-", NULL };
+static const char *upbright[] = { "brightnessctl", "s", "2%+", NULL };
 static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *screenshot[] = { "scrot", "$HOME/Pictures/%Y-%m-%%d_%H:%M:%%S.png", "-s", "-e", "'xclip -selection clipboard -target image/png -i $f'", NULL };
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
-static const char *downbright[] = { "brightnessctl", "s", "2%-", NULL };
-static const char *upbright[] = { "brightnessctl", "s", "2%+", NULL };
+static const char *screenshot[] = { "scrot", "Pictures/%Y-%m-%d_%H:%M:%S.png", "-s", "-e", "'xclip -selection clipboard -target image/png -i $f'", NULL };
+static const char *test[] = { "notify-send", "test", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -86,6 +88,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd} },
 	{ MODKEY,                       XK_Return, spawn,          {.v = term} },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slock} },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = test} },
 	{ Mod1Mask,                     XK_l,      spawn,          {.v = nautilus} },
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = spotifynext } },
 	{ Mod1Mask,                     XK_s,      spawn,          {.v = spotifyprevious } },
