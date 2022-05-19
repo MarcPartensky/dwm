@@ -77,6 +77,7 @@ static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.m
 static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
 static const char *screenshot[] = { ".local/bin/screenshot", NULL };
+static const char *wppnext[] = { ".local/bin/wpp", "--next", NULL };
 static const char *test[] = { "notify-send", "test", NULL };
 
 
@@ -92,6 +93,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = term} },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slock} },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = test} },
+ 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wppnext} },
 	{ Mod1Mask,                     XK_l,      spawn,          {.v = nautilus} },
 	{ Mod1Mask,                     XK_f,      spawn,          {.v = firefox} },
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = spotifynext } },
