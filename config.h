@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	{ "discord",  "discord",    "Discord",          1 << 3,  0,    -1 },
 	{ "Caprine",  "caprine",    "Messenger",        1 << 4,  0,    -1 },
 	{ NULL,       NULL,         "Microsoft Teams",  1 << 7,  0,    -1 },
-	{ NULL,       NULL,         "Slack",            1 << 8,  0,    -1 },
+	{ "Slack",    "slack",      "Slack",            1 << 8,  0,    -1 },
 };
 
 /* layout(s) */
