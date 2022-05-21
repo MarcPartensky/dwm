@@ -29,16 +29,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class        instance    title              tags mask  isfloating  monitor */
-	{ "Gimp",       NULL,       NULL,              0,         1,          -1 },
-	{ NULL,         NULL,       "st",              0,         1,          -1 },
-	/* { "Firefox",    NULL,       NULL,              1 << 1,    0,          -1 }, */
-	{ NULL,         NULL,       "Firefox",         1 << 1,    0,          -1 },
-	{ "Spotify",    NULL,       "Spotify",         1 << 2,    0,          -1 },
-	{ "discord",    NULL,       "Discord",         1 << 3,    0,          -1 },
-	{ NULL,         NULL,       "Messenger",       1 << 4,    0,          -1 },
-	{ NULL,         NULL,       "Microsoft Teams", 1 << 7,    0,          -1 },
-	{ NULL,         NULL,       "Slack",           1 << 8,    0,          -1 },
+	/* class      instance      title               tags     mask  isfloating  monitor */
+	{ "Gimp",     NULL,         NULL,               0,       1,    -1 },
+	{ NULL,       NULL,         "st",               0,       1,    -1 },
+	{ "firefox",  "Navigator",  "Firefox",          1 << 1,  0,    -1 },
+	{ "Spotify",  "spotify",    "Spotify",          1 << 2,  0,    -1 },
+	{ "discord",  "discord",    "Discord",          1 << 3,  0,    -1 },
+	{ "Caprine",  "caprine",    "Messenger",        1 << 4,  0,    -1 },
+	{ NULL,       NULL,         "Microsoft Teams",  1 << 7,  0,    -1 },
+	{ NULL,       NULL,         "Slack",            1 << 8,  0,    -1 },
 };
 
 /* layout(s) */
