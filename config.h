@@ -82,6 +82,7 @@ static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NUL
 static const char *spotifynext[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next", NULL };
 static const char *spotifyprevious[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous", NULL };
 static const char *spotifytoggle[] = { "dbus-send", "--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause", NULL };
+static const char *spotifylike[] = { ".local/bin/envsplike", NULL };
 static const char *screenshot[] = { ".local/bin/screenshot", NULL };
 static const char *wppnext[] = { ".local/bin/wpp", "--next", NULL };
 static const char *test[] = { "notify-send", "test", NULL };
@@ -105,6 +106,7 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = spotifynext } },
 	{ Mod1Mask,                     XK_s,      spawn,          {.v = spotifyprevious } },
 	{ Mod1Mask,                     XK_k,      spawn,          {.v = spotifytoggle } },
+	{ Mod1Mask,                     XK_a,      spawn,          {.v = spotifylike } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
  	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
  	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
