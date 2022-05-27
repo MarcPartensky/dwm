@@ -86,7 +86,7 @@ static const char *spotifylike[] = { ".local/bin/spenv", "splike", NULL };
 static const char *spotifyforward[] = { ".local/bin/spenv", "spseek", "+10", NULL };
 static const char *spotifybackward[] = { ".local/bin/spenv", "spseek", "-10", NULL };
 static const char *screenshot[] = { ".local/bin/screenshot", NULL };
-static const char *wppnext[] = { ".local/bin/wpp", "--next", NULL };
+static const char *wppnext[] = { ".local/bin/wppenv", "--next", NULL };
 static const char *test[] = { "notify-send", "test", NULL };
 
 
