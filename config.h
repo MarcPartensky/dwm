@@ -33,10 +33,12 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,         NULL,               0,       1,    -1 },
 	{ NULL,       NULL,         "st",               0,       1,    -1 },
 	{ "firefox",  "Navigator",  "Firefox",          1 << 1,  0,    -1 },
+	{ "Spotify",  "spotify",    NULL,               1 << 2,  0,    -1 },
 	/* { "Spotify",  "spotify",    NULL,               1 << 2,  0,    -1 }, */
 	{ NULL,       NULL,         "Spotify",          1 << 2,  0,    -1 },
 	{ "discord",  "discord",    "Discord",          1 << 3,  0,    -1 },
 	{ "Caprine",  "caprine",    "Messenger",        1 << 4,  0,    -1 },
+	{ "Geary",    NULL,         NULL,               1 << 5,  0,    -1 },
 	{ NULL,       NULL,         "Microsoft Teams",  1 << 7,  0,    -1 },
 	{ "Slack",    "slack",      "Slack",            1 << 8,  0,    -1 },
 };
