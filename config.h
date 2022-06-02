@@ -3,6 +3,8 @@
 #include "selfrestart.c"
 
 /* appearance */
+static const double fwr = 0.65; // first window width ratio
+static const double fhr = 0.8; // first window height ratio
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -40,18 +42,18 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance      title               tags     mask  isfloating  monitor */
-	{ "Gimp",     NULL,         NULL,               0,       1,    -1 },
-	{ NULL,       NULL,         "st",               0,       1,    -1 },
-	{ "firefox",  "Navigator",  "Firefox",          1 << 1,  0,    -1 },
-	{ "Spotify",  "spotify",    NULL,               1 << 2,  0,    -1 },
-	/* { "Spotify",  "spotify",    NULL,               1 << 2,  0,    -1 }, */
-	{ NULL,       NULL,         "Spotify",          1 << 2,  0,    -1 },
-	{ "discord",  "discord",    "Discord",          1 << 3,  0,    -1 },
-	{ "Caprine",  "caprine",    "Messenger",        1 << 4,  0,    -1 },
-	{ "Geary",    NULL,         NULL,               1 << 5,  0,    -1 },
-	{ NULL,       NULL,         "Microsoft Teams",  1 << 7,  0,    -1 },
-	{ "Slack",    "slack",      "Slack",            1 << 8,  0,    -1 },
+    /* class       instance      title               tags mask  floating  center monitor */
+	{ "Gimp",      NULL,         NULL,               0,         1,        0,     -1 },
+	{ "Alacritty", NULL,         NULL,               0,         0,        1,     -1 },
+	{ NULL,        NULL,         "st",               0,         1,        1,     -1 },
+	{ "firefox",   "Navigator",  "Firefox",          1 << 1,    0,        0,     -1 },
+	{ "Spotify",   "spotify",    NULL,               1 << 2,    0,        0,     -1 },
+	{ NULL,        NULL,         "Spotify",          1 << 2,    0,        0,     -1 },
+	{ "discord",   "discord",    "Discord",          1 << 3,    0,        0,     -1 },
+	{ "Caprine",   "caprine",    "Messenger",        1 << 4,    0,        0,     -1 },
+	{ "Geary",     NULL,         NULL,               1 << 5,    0,        0,     -1 },
+	{ NULL,        NULL,         "Microsoft Teams",  1 << 7,    0,        0,     -1 },
+	{ "Slack",     "slack",      "Slack",            1 << 8,    0,        0,     -1,},
 };
 
 /* layout(s) */
