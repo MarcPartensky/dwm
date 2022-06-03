@@ -52,6 +52,7 @@ static const Rule rules[] = {
 	{ "discord",   "discord",    "Discord",          1 << 3,    0,        0,     -1 },
 	{ "Caprine",   "caprine",    "Messenger",        1 << 4,    0,        0,     -1 },
 	{ "Geary",     NULL,         NULL,               1 << 5,    0,        0,     -1 },
+	{ NULL,        NULL,         "Calendar",         1 << 6,    0,        0,     -1 },
 	{ NULL,        NULL,         "Microsoft Teams",  1 << 7,    0,        0,     -1 },
 	{ "Slack",     "slack",      "Slack",            1 << 8,    0,        0,     -1,},
 };
@@ -85,7 +86,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenu, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *term[]  = { "alacritty", NULL };
+static const char *term[]  = { ".local/bin/spawn-alacritty", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *nautilus[]  = { "nautilus", NULL };
 static const char *firefox[]  = { "firefox", NULL };
