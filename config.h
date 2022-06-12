@@ -12,20 +12,18 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "MesloLGS Font:pixelsize=15:antialias=true:autohint=true" };
 static const char dmenufont[]       = "MesloLGS Font:pixelsize=15:antialias=true:autohint=true";
 static const unsigned int gappx     = 6;        /* gap pixel between windows */
-/* static const char col_gray1[]       = "#222222"; */
-static const char col_gray1[]       = "#010101";
-/* static const char col_gray2[]       = "#444444"; */
-static const char col_gray2[]       = "#111111";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#cc1133";
+static const char col_black[]       = "#010101";
+static const char col_grey[]       = "#bbbbbb";
+static const char col_white[]       = "#eeeeee";
+static const char col_red[]        = "#cc1133";
+static const char col_darkgrey[]        = "#222222";
 static const unsigned int baralpha = 0xd63;
 /* static const unsigned int borderalpha = OPAQUE; */
 static const unsigned int borderalpha = 0xd20;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_grey, col_black, col_black },
+	[SchemeSel]  = { col_white, col_darkgrey,  col_white  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -85,7 +83,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenu, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_grey, "-sb", col_darkgrey, "-sf", col_white, NULL };
 static const char *term[]  = { ".local/bin/spawn-alacritty", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *nautilus[]  = { "nautilus", NULL };
