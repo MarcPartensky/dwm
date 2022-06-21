@@ -83,7 +83,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenu, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_grey, "-sb", col_darkgrey, "-sf", col_white, NULL };
+/* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_grey, "-sb", col_darkgrey, "-sf", col_white, NULL }; */
+static const char *dmenucmd[] = { "rofi", "-show", "run", NULL };
 static const char *term[]  = { ".local/bin/spawn-alacritty", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *nautilus[]  = { "nautilus", NULL };
